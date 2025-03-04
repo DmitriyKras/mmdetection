@@ -29,7 +29,7 @@ model = dict(
         act_cfg=dict(type='SiLU', inplace=True)),
     bbox_head=dict(
         type='RTMDetSepBNHead',
-        num_classes=80,
+        num_classes=1,
         in_channels=256,
         stacked_convs=2,
         feat_channels=256,
@@ -119,7 +119,7 @@ val_dataloader = dict(
     batch_size=5, num_workers=10, dataset=dict(pipeline=test_pipeline))
 test_dataloader = val_dataloader
 
-max_epochs = 300
+max_epochs = 200
 stage2_num_epochs = 20
 base_lr = 0.004
 interval = 10
